@@ -146,11 +146,20 @@ app.post("/updatewins", function (req, res) {
 
 
 
-
-
-
-
-
+app.delete('/deleteteam', (req, res) => {
+    var name = req.body.teamname;
+    var sql = 'DELETE FROM team WHERE team_name = ?';
+  
+    connection.query(sql, [name], (err, result) => {
+      if (err) {
+        console.error(err);
+        res.send({ success: false, error: err.message });
+      } else {
+        console.log('Deleted:', result.affectedRows, 'rows');
+        res.send({ success: true });
+      }
+    });
+  });
 
 
 
@@ -161,3 +170,4 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
