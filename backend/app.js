@@ -110,7 +110,7 @@ app.post("/addteam",function(req,res){
 // });
 
 
-app.post("/updatewins", function (req, res) {
+app.put("/updatewins", function (req, res) {
     var team_name = req.body.teamname;
     var wins = req.body.win;
 

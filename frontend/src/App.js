@@ -7,6 +7,7 @@ import Addteam from './components/Addteam.js';
 import Pointstable from './components/Pointstable';
 import Players from './components/Players';
 import Navbar from './components/Navbar';
+import Updatewins from './components/Updatewins.js';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/teams' element={<Teams />} />
           <Route path='/addteam' element={<Addteam />} />
           <Route path='/players/:teamname' element={<Players />} />
+          <Route path='/updatewins/:teamname' element={<Updatewins />} />
 
           
         </Routes>

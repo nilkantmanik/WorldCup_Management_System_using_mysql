@@ -4,11 +4,12 @@ import { FaTrash } from 'react-icons/fa';
 import axios from "axios";
 import './teams.css'
 
-import BlurredWindow from './Model';
+
 
 function Teams() {
   const [teams,setTeams] = useState();
   const [refresh, setRefresh] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -40,10 +41,19 @@ function Teams() {
 
   }
 
-  const handlePopup = async () =>{
-        console.log("pop up clicked");
-        <BlurredWindow />
-  }
+  // const handlePopup = async () =>{
+  //       console.log("pop up clicked");
+  //       <BlurredWindow />
+  // }
+
+  const handlePopup = (teamname) => {
+    // console.log('pop up clicked');
+
+    navigate(`/updatewins/${encodeURIComponent(teamname)}`);
+
+  };
+
+  
 
   return (
     <>
@@ -92,6 +102,8 @@ function Teams() {
      ) : (
       <div>Not fetched</div>
     )}
+
+    
     </>
   )
 }
